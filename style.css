@@ -32,6 +32,9 @@ canvas#game {
   height: 100%;
   background: #70c5ce;
   cursor: pointer;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
 }
 
 #hud {
@@ -60,6 +63,7 @@ canvas#game {
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 .screen {
@@ -69,6 +73,9 @@ canvas#game {
   padding: 32px 28px;
   border-radius: 16px;
   backdrop-filter: blur(2px);
+  pointer-events: auto;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .screen.hidden {
