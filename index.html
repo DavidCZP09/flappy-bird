@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Flappy Bird</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-container">
+  <canvas id="game" width="360" height="640"></canvas>
+  <div id="overlay">
+    <div id="start-screen" class="screen">
+      <h1>Flappy Bird</h1>
+      <p>Tap, click, or press Space to flap</p>
+      <button id="start-btn">Start</button>
+      <p class="high-score">Best: <span id="start-high-score">0</span></p>
+    </div>
+    <div id="game-over-screen" class="screen hidden">
+      <h1>Game Over</h1>
+      <p>Score: <span id="final-score">0</span></p>
+      <p class="high-score">Best: <span id="final-high-score">0</span></p>
+      <button id="restart-btn">Play Again</button>
+    </div>
+  </div>
+  <div id="hud" class="hidden">
+    <span id="score">0</span>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
