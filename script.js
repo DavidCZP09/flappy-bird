@@ -259,6 +259,15 @@
   startBtn.addEventListener('click', (e) => { e.stopPropagation(); startGame(); });
   restartBtn.addEventListener('click', (e) => { e.stopPropagation(); startGame(); });
 
+  // iOS Safari still triggers double-tap-to-zoom on rapid taps regardless of
+  // the viewport meta tag; suppress it by eating the second touchend.
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTouchEnd < 350) e.preventDefault();
+    lastTouchEnd = now;
+  }, { passive: false });
+
   bird = { x: BIRD_X, y: HEIGHT / 2, vy: 0, rotation: 0 };
   pipes = [];
   spawnPipe(WIDTH + 100);
